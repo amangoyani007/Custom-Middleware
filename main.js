@@ -10,15 +10,16 @@ const router = require('./routes/route');
 
 app.use('/api', router);
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT
 
 const start = async () => {
     try {
-        app.listen(port, () => {
+        // await connectDB(process.env.MONGO_URI)
+        app.listen(port, () => {            
             console.log(`port is listening on port ${port}...`);
-            if (connectDB) {
-                console.log("database");
-            }
+            // if (connectDB) {
+            //     console.log("database conected");
+            // }
         })
     } catch (err) {
         console.log(err);
