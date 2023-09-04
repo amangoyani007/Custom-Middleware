@@ -12,4 +12,9 @@ const login = async (req, res) => {
     res.status(200).json({ msg: "Created", user, pass, token });
 }
 
-module.exports = { login };
+const data = async (req, res) => {
+    console.log(req.user);
+    res.status(200).json({msg: `Your user name : ${req.user.user}`, username: `${req.user.user}`, password: `${req.user.pass}`});
+}
+
+module.exports = { login, data };

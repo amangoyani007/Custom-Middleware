@@ -15,7 +15,7 @@ const tokenVarify = async (req, res, next) => {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const { user, pass } = decoded;
         req.user = { user, pass };
-        res.json({ msg: "your username and pass is safe", user, pass })
+        // res.json({ msg: "your username and pass is safe", user, pass })
         next();
 
     } catch (error) {
